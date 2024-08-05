@@ -1,0 +1,23 @@
+---
+interface Props {
+  topics?: string[];
+}
+
+const { topics } = Astro.props;
+---
+
+{
+  topics && topics.length > 0 ? (
+    <div class="d-flex flex-wrap">
+      {topics.map((topic) => {
+        return (
+          <a href="/articles.html" class="btn btn-outline-success">
+            {topic}
+          </a>
+        );
+      })}
+    </div>
+  ) : (
+    <p class="text-body-secondary">Theres no topic related.</p>
+  )
+}

@@ -1,12 +1,19 @@
-<nav class="navbar navbar-transparent navbar-expand-lg">
+---
+const { sticky } = Astro.props;
+
+const navClass = ["navbar navbar-expand-lg"];
+navClass.push(!sticky ? "navbar-transparent" : "sticky-top shadow");
+---
+
+<nav class={navClass.join(" ")}>
   <div class="container">
     <a class="navbar-brand brand-title" href="/">Addin Cendekia</a>
     <!-- desktop only -->
     <div class="d-none d-lg-block flex-grow-0">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/">Home</a>
-        <a class="nav-link" href="/projects.html">Projects</a>
-        <a class="nav-link" href="/articles.html">Articles</a>
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/projects">Projects</a>
+        <a class="nav-link" href="/articles">Articles</a>
         <!-- <a class="nav-link" href="/about">About</a> -->
       </div>
     </div>
@@ -40,11 +47,20 @@
       </div>
       <div class="offcanvas-body">
         <nav class="nav flex-column">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-          <a class="nav-link" href="/projects.html">Projects</a>
-          <a class="nav-link" href="/articles.html">Articles</a>
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/projects">Projects</a>
+          <a class="nav-link" href="/articles">Articles</a>
         </nav>
       </div>
     </div>
   </div>
 </nav>
+
+<script is:inline define:vars={{ currentPath: Astro.url.pathname }}>
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    }
+  });
+</script>

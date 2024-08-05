@@ -1,0 +1,81 @@
+---
+import Layout from "./Layout.astro";
+
+import ArticleList from "../components/ArticleList.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import ShareButtons from "../components/ShareButtons.astro";
+import Topics from "../components/Topics.astro";
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description?: string;
+    image?: string;
+    imageAlt?: string;
+    pubDate: string;
+    author: string;
+
+    className?: string;
+    topics?: string[];
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout
+  className={frontmatter?.className}
+  title={frontmatter.title}
+  headerSticky
+>
+  <Breadcrumbs />
+
+  <!-- articles -->
+  <section class="pt-3 py-80">
+    <div class="container">
+      <div class="row">
+        <section class="col-lg-8">
+          <h1>{frontmatter.title}</h1>
+
+          <p class="text-body-secondary mb-3">{frontmatter?.description}</p>
+
+          <img
+            class="thumbnail rounded mb-2"
+            src={frontmatter?.image ?? "/no-image.png"}
+            alt={frontmatter?.imageAlt ?? frontmatter.title}
+            width="705"
+            height="393"
+          />
+
+          <div
+            class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between border-bottom py-2 mb-4"
+          >
+            <p class="mb-0">
+              By
+              <strong class="pe-2">{frontmatter.author}</strong>
+              <time class="border-start border-dark ps-2">
+                {frontmatter.pubDate}
+              </time>
+            </p>
+
+            <ShareButtons />
+          </div>
+
+          <slot />
+        </section>
+
+        <section class="col-lg-4">
+          <div class="related-topics mb-5">
+            <h2 class="fs-4 underline">Related Topics</h2>
+            <Topics topics={frontmatter?.topics} />
+          </div>
+
+          <div class="other-articles">
+            <h2 class="fs-4 underline">Other Articles</h2>
+            <ArticleList />
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</Layout>
