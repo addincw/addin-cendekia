@@ -9,23 +9,30 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Welcome to My Site.">
   <section class="banner bg-gradient-seagreen py-80 px-3">
-    <div class="container">
-      <h1 class="fs-6 fw-normal mb-50">
-        Hello, my name is
-        <span class="banner-highlight-text d-block fw-semibold py-2">
-          Addin Cendekia Wahid,
-        </span>
-        the author of this site.
-      </h1>
+    <div class="row gx-3 container mx-auto">
+      <div class="col-12 col-md-6">
+        <h1 class="fs-6 fw-normal mb-50">
+          Hello, my name is
+          <span class="banner-highlight-text d-block fw-semibold py-2">
+            Addin Cendekia Wahid,
+          </span>
+          welcome to my personal website.
+        </h1>
 
-      <p class="mb-50">
-        Im a <span class="d-block fw-semibold fs-1">Software Engineer</span>
-      </p>
+        <p class="mb-50">
+          Im a <span class="d-block fw-semibold fs-1">Software Engineer</span>
+        </p>
 
-      <p>Have something to discuss? lets see if i can help that</p>
-      <button class="btn btn-lg btn-gradient-pearlgreen rounded-pill">
-        <i class="bi bi-envelope me-1"></i> Send me a message
-      </button>
+        <p>
+          I'm currently exploring freelance opportunities and open to new job
+          prospects. If you have something in mind, let's connect and see how I
+          can assist you.
+        </p>
+        <button class="btn btn-lg btn-gradient-pearlgreen rounded-pill">
+          <i class="bi bi-envelope me-1"></i> Send me a message
+        </button>
+      </div>
+      <div class="col-12 col-md-6"></div>
     </div>
   </section>
 
@@ -77,7 +84,7 @@ import Layout from "../layouts/Layout.astro";
             and technologies that brought my ideas to life.
           </p>
           <a
-            href="/projects.html"
+            href="/projects"
             class="link-primary link-offset-3 text-capitalize"
           >
             see another projects <i class="bi bi-arrow-right-short ms-1"></i>
@@ -94,9 +101,7 @@ import Layout from "../layouts/Layout.astro";
                 />
                 <div class="card-body bg-success">
                   <h3 class="card-title">
-                    <a href="/project-detail.html" class="link">
-                      Project Title
-                    </a>
+                    <a href="/projects/demo" class="link"> Project Title </a>
                   </h3>
                 </div>
               </div>
@@ -109,9 +114,7 @@ import Layout from "../layouts/Layout.astro";
                 />
                 <div class="card-body bg-success">
                   <h3 class="card-title">
-                    <a href="/project-detail.html" class="link">
-                      Project Title
-                    </a>
+                    <a href="/projects/demo" class="link"> Project Title </a>
                   </h3>
                 </div>
               </div>
@@ -125,9 +128,7 @@ import Layout from "../layouts/Layout.astro";
                 />
                 <div class="card-body bg-success">
                   <h3 class="card-title">
-                    <a href="/project-detail.html" class="link">
-                      Project Title
-                    </a>
+                    <a href="/projects/demo" class="link"> Project Title </a>
                   </h3>
                 </div>
               </div>
@@ -140,9 +141,7 @@ import Layout from "../layouts/Layout.astro";
                 />
                 <div class="card-body bg-success">
                   <h3 class="card-title">
-                    <a href="/project-detail.html" class="link">
-                      Project Title
-                    </a>
+                    <a href="/projects/demo" class="link"> Project Title </a>
                   </h3>
                 </div>
               </div>
@@ -168,7 +167,7 @@ import Layout from "../layouts/Layout.astro";
             />
             <div class="card-body">
               <h3 class="card-title">
-                <a href="/article-detail.html" class="link link-primary">
+                <a href="/articles/demo" class="link link-primary">
                   Article Title
                 </a>
               </h3>
@@ -189,7 +188,7 @@ import Layout from "../layouts/Layout.astro";
             />
             <div class="card-body">
               <h3 class="card-title">
-                <a href="/article-detail.html" class="link link-primary">
+                <a href="/articles/demo" class="link link-primary">
                   Article Title
                 </a>
               </h3>
@@ -210,7 +209,7 @@ import Layout from "../layouts/Layout.astro";
             />
             <div class="card-body">
               <h3 class="card-title">
-                <a href="/article-detail.html" class="link link-primary">
+                <a href="/articles/demo" class="link link-primary">
                   Article Title
                 </a>
               </h3>
@@ -230,7 +229,7 @@ import Layout from "../layouts/Layout.astro";
             />
             <div class="card-body">
               <h3 class="card-title">
-                <a href="/article-detail.html" class="link link-primary">
+                <a href="/articles/demo" class="link link-primary">
                   Article Title
                 </a>
               </h3>
@@ -251,7 +250,7 @@ import Layout from "../layouts/Layout.astro";
             />
             <div class="card-body">
               <h3 class="card-title">
-                <a href="/article-detail.html" class="link link-primary">
+                <a href="/articles/demo" class="link link-primary">
                   Article Title
                 </a>
               </h3>
@@ -272,7 +271,7 @@ import Layout from "../layouts/Layout.astro";
             />
             <div class="card-body">
               <h3 class="card-title">
-                <a href="/article-detail.html" class="link link-primary">
+                <a href="/articles/demo" class="link link-primary">
                   Article Title
                 </a>
               </h3>
@@ -286,10 +285,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
 
       <div class="text-center">
-        <a
-          href="/articles.html"
-          class="link-primary link-offset-3 text-capitalize"
-        >
+        <a href="/articles" class="link-primary link-offset-3 text-capitalize">
           see another articles <i class="bi bi-arrow-right-short ms-1"></i>
         </a>
       </div>
